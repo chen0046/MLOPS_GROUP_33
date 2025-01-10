@@ -1,10 +1,29 @@
-# final_project
+# (Draft name) Graph Attention Network (GAT) on the CORA dataset
+## MLOPS project description
 
-Project model
-GAT
+This repository showcases the project work completed by Group 33 as part of the course [02476 Machine Learning Operations](https://kurser.dtu.dk/course/02476) offered at DTU. The members of Group 33 are: 
 
-Dataset 
-Cora
+Names - Student number
+Names - Student number
+Edwin R. Ranjitkumar - s140035
+Names - Student number
+
+### Overall goal of the project
+The goal of the project is to use Graph Neural Networks (GNN) to solve a node classification task of predicting the topic of scientific papers.
+
+### What framework are you going to use 
+Since the problem can be categorized as having a graph structure, we plan to use an extension to the PyTorch framework called PyTorch Geometric (PyG). 
+
+### How do you intend to include the framework into your project?
+We plan on utilizing PyTorch Geometric (PyG) to implement our model, as it provides efficient tools and utilities for the development of graph based machine learning models. 
+
+### What data are you going to run on (initially, may change)
+
+We are using the [publicly available](https://deepai.org/dataset/cora) Cora dataset, which is a widely used benchmark dataset in machine learning and graph-based research. It consists of 2,708 scientific papers classified among seven classes (topics).
+
+### What models do you expect to use
+
+We intend to implement a Graph Attention Networks (GATs) using Pytorch Geometric library and train the model on the Cora dataset.
 
 ## Project structure
 
