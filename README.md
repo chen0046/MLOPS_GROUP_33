@@ -1,6 +1,10 @@
 # final_project
 
-await
+Project model
+GAT
+
+Dataset 
+Cora
 
 ## Project structure
 
