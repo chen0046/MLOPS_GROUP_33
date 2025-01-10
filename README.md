@@ -3,9 +3,9 @@
 
 This repository showcases the project work completed by Group 33 as part of the course [02476 Machine Learning Operations](https://kurser.dtu.dk/course/02476) offered at DTU. The members of Group 33 are: 
 
-Names - Student number
-Names - Student number
-Edwin R. Ranjitkumar - s140035
+Names - Student number\
+Names - Student number\
+Edwin R. Ranjitkumar - s140035\
 Names - Student number
 
 ### Overall goal of the project
