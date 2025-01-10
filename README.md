@@ -6,6 +6,7 @@ This repository showcases the project work completed by Group 33 as part of the 
 Names - Student number\
 Qiwen Huang - s242640\
 Edwin R. Ranjitkumar - s140035\
+Alex Richard Hansen - s147082\
 Names - Student number
 
 ### Overall goal of the project
