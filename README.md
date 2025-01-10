@@ -4,12 +4,12 @@
 This repository showcases the project work completed by Group 33 as part of the course [02476 Machine Learning Operations](https://kurser.dtu.dk/course/02476) offered at DTU. The members of Group 33 are: 
 
 Names - Student number\
-Names - Student number\
+Qiwen Huang - s242640\
 Edwin R. Ranjitkumar - s140035\
 Names - Student number
 
 ### Overall goal of the project
-The goal of the project is to use Graph Neural Networks (GNN) to solve a node classification task of predicting the topic of scientific papers.
+The goal of this project is to explore the use of graph neural networks with attention mechanisms to analyze citation relationships between papers, aiming to classify the academic topics of the papers.
 
 ### What framework are you going to use 
 Since the problem can be categorized as having a graph structure, we plan to use an extension to the PyTorch framework called PyTorch Geometric (PyG). 
