@@ -19,7 +19,7 @@ We plan on utilizing PyTorch Geometric (PyG) to implement our model, as it provi
 
 ### What data are you going to run on (initially, may change)
 
-We are using the [publicly available](https://deepai.org/dataset/cora) Cora dataset, which is a widely used benchmark dataset in machine learning and graph-based research. It consists of 2,708 scientific papers classified among seven classes (topics).
+We are using the publicly available Cora dataset, which is a widely used benchmark dataset in machine learning and graph-based research. It consists of 2,708 scientific papers classified among seven classes (topics).
 
 ### What models do you expect to use
 
