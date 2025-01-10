@@ -6,7 +6,7 @@ This repository showcases the project work completed by Group 33 as part of the 
 Chenxi Cai - s205420\
 Qiwen Huang - s242640\
 Edwin R. Ranjitkumar - s140035\
-Alex Richard Hansen - s147082\
+Alex Richard Hansen - s147082
 
 ### Overall goal of the project
 The goal of this project is to explore the use of graph neural networks with attention mechanisms to analyze citation relationships between papers, aiming to classify the academic topics of the papers.
