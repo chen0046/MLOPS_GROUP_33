@@ -117,8 +117,9 @@ will check the repositories and the code to verify your answers.
 > **Enter the group number you signed up on <learn.inside.dtu.dk>**
 >
 > Answer:
-Group 33
+
 --- question 1 fill here ---
+Group 33
 
 ### Question 2
 > **Enter the study number for each member in the group**
