@@ -6,6 +6,8 @@ import glob
 import time
 import random
 import argparse
+import wandb
+import matplotlib.pyplot as plt
 import numpy as np
 import torch
 import torch.nn as nn
@@ -97,6 +99,16 @@ def train(epoch):
 
     loss_val = F.nll_loss(output[idx_val], labels[idx_val])
     acc_val = accuracy(output[idx_val], labels[idx_val])
+
+    # Log metrics to WandB
+    wandb.log({
+        "train_loss": loss_train.item(),
+        "train_accuracy": acc_train.item(),
+        "val_loss": loss_values,
+        "val_accuracy": acc_val,
+        "epoch": epoch + 1,
+    })
+
     print('Epoch: {:04d}'.format(epoch+1),
           'loss_train: {:.4f}'.format(loss_train.data.item()),
           'acc_train: {:.4f}'.format(acc_train.data.item()),
@@ -122,6 +134,12 @@ loss_values = []
 bad_counter = 0
 best = args.epochs + 1
 best_epoch = 0
+
+run = wandb.init(
+        project="corrupt_mnist",
+        config={"lr": args.lr, "epochs": args.epochs},
+    )
+
 for epoch in range(args.epochs):
     loss_values.append(train(epoch))
 
@@ -154,6 +172,6 @@ print("Total time elapsed: {:.4f}s".format(time.time() - t_total))
 # Restore best model
 print('Loading {}th epoch'.format(best_epoch))
 model.load_state_dict(torch.load('{}.pkl'.format(best_epoch)))
-
+wandb.log({"best_epoch": best_epoch})
 # Testing
 compute_test()
