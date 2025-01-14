@@ -15,8 +15,8 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torch.autograd import Variable
 
-from data import load_data, accuracy
-from models import GAT, SpGAT
+from .data import load_data, accuracy
+from .models import GAT, SpGAT
 
 # Training settings
 parser = argparse.ArgumentParser()
@@ -45,7 +45,7 @@ if args.cuda:
 
 current_dir = os.path.dirname(__file__)  # train.py 的路径
 project_root = os.path.abspath(os.path.join(current_dir, '..', '..', '..'))
-processed_data_dir = os.path.join(project_root, 'MLOPS_GROUP_33', 'data', 'processed\\')
+processed_data_dir = os.path.join(project_root, 'MLOPS_GROUP_33', 'data', 'processed//')
 
 # Load data
 adj, features, labels, idx_train, idx_val, idx_test = load_data(path=processed_data_dir)
