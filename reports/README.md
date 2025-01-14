@@ -129,7 +129,7 @@ Group 33
 >
 > Answer:
 
---- question 2 fill here ---
+s205420, s242640, s147082, s140035
 
 ### Question 3
 > **A requirement to the project is that you include a third-party package not covered in the course. What framework**
