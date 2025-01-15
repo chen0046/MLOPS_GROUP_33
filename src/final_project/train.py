@@ -43,7 +43,7 @@ torch.manual_seed(args.seed)
 if args.cuda:
     torch.cuda.manual_seed(args.seed)
 
-current_dir = os.path.dirname(__file__)  # train.py 的路径
+current_dir = os.path.dirname(__file__)  
 project_root = os.path.abspath(os.path.join(current_dir, '..', '..', '..'))
 processed_data_dir = os.path.join(project_root, 'MLOPS_GROUP_33', 'data', 'processed//')
 
@@ -174,7 +174,7 @@ print('Loading {}th epoch'.format(best_epoch))
 model.load_state_dict(torch.load('{}.pkl'.format(best_epoch)))
 wandb.log({"best_epoch": best_epoch})
 artifact = wandb.Artifact("GAT", type="model")
-artifact.add_file(f"{best_epoch}.pkl")  # 添加最好的模型文件
-wandb.log_artifact(artifact)  # 上传到 wandb
+artifact.add_file(f"{best_epoch}.pkl")  
+wandb.log_artifact(artifact)  
 # Testing
 compute_test()
