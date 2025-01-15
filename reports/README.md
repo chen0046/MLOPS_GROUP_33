@@ -213,7 +213,7 @@ s205420, s242640, s147082, s140035
 >
 > Answer:
 
-In total, we have implemented 3 tests. Primarily, we are testing the data loading and accuracy functions, as these are the most critical parts of our application for ensuring correct data preprocessing and performance evaluation. These tests focus on validating the integrity of data and the accuracy metrics, ensuring robust functionality in key components.
+In total, we have implemented 3 tests. Primarily, we are testing the data loading and accuracy functions, as these are the most critical parts of our application for ensuring correct data preprocessing and performance evaluation. Additionally, we are testing the model implementation to verify its functionality and output, ensuring reliability in both data handling and model behavior.
 
 ### Question 8
 
@@ -275,7 +275,10 @@ In total, we have implemented 3 tests. Primarily, we are testing the data loadin
 >
 > Answer:
 
---- question 11 fill here ---
+We have organized our continuous integration into one file that focuses on unit testing. This file runs the tests we have implemented, such as verifying the data loading, accuracy function, and model behavior. To ensure broad compatibility, we have tested across multiple operating systems, including Linux, Windows, and macOS, as well as Python versions 3.10, 3.11, and 3.12. While adding these combinations enhanced our test coverage, it also doubled the runtime due to the increased matrix of tests.
+
+To mitigate this, we incorporated caching into our workflow. This optimization significantly reduced the runtime, improving it by approximately 30%. Caching particularly benefits repetitive tasks like dependency installation, making our continuous integration pipeline more efficient without compromising on thorough testing. An example of a triggered workflow can be seen below
+<https://github.com/chen0046/MLOPS_GROUP_33/actions/runs/12797433854>
 
 ## Running code and tracking experiments
 
