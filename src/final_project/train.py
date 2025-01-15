@@ -15,8 +15,8 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torch.autograd import Variable
 
-from .data import load_data, accuracy
-from .models import GAT, SpGAT
+from data import load_data, accuracy
+from models import GAT, SpGAT
 
 # Training settings
 parser = argparse.ArgumentParser()
@@ -171,8 +171,10 @@ print("Total time elapsed: {:.4f}s".format(time.time() - t_total))
 
 # Restore best model
 print('Loading {}th epoch'.format(best_epoch))
-best_model= model.load_state_dict(torch.load('{}.pkl'.format(best_epoch)))
+model.load_state_dict(torch.load('{}.pkl'.format(best_epoch)))
 wandb.log({"best_epoch": best_epoch})
-wandb.save(best_model)
+artifact = wandb.Artifact("GAT", type="model")
+artifact.add_file(f"{best_epoch}.pkl")  # 添加最好的模型文件
+wandb.log_artifact(artifact)  # 上传到 wandb
 # Testing
 compute_test()

@@ -1,8 +1,4 @@
 jobs:
-  identify_event:
-    ...
-  test_model:
-    ...
   add_production_alias:
     runs-on: ubuntu-latest
     needs: identify_event
