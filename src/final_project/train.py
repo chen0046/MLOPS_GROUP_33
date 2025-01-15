@@ -136,7 +136,7 @@ best = args.epochs + 1
 best_epoch = 0
 
 run = wandb.init(
-        project="corrupt_mnist",
+        project="GAT",
         config={"lr": args.lr, "epochs": args.epochs},
     )
 
@@ -171,7 +171,8 @@ print("Total time elapsed: {:.4f}s".format(time.time() - t_total))
 
 # Restore best model
 print('Loading {}th epoch'.format(best_epoch))
-model.load_state_dict(torch.load('{}.pkl'.format(best_epoch)))
+best_model= model.load_state_dict(torch.load('{}.pkl'.format(best_epoch)))
 wandb.log({"best_epoch": best_epoch})
+wandb.save(best_model)
 # Testing
 compute_test()
