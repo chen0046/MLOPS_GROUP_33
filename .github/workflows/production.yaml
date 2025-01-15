@@ -1,3 +1,7 @@
+name: Check staged model
+on:
+  repository_dispatch:
+    types: staged_model
 jobs:
   add_production_alias:
     runs-on: ubuntu-latest
