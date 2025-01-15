@@ -213,7 +213,7 @@ s205420, s242640, s147082, s140035
 >
 > Answer:
 
---- question 7 fill here ---
+In total, we have implemented 3 tests. Primarily, we are testing the data loading and accuracy functions, as these are the most critical parts of our application for ensuring correct data preprocessing and performance evaluation. These tests focus on validating the integrity of data and the accuracy metrics, ensuring robust functionality in key components.
 
 ### Question 8
 
@@ -263,7 +263,7 @@ s205420, s242640, s147082, s140035
 ### Question 11
 
 > **Discuss you continuous integration setup. What kind of continuous integration are you running (unittesting,**
-> **linting, etc.)? Do you test multiple operating systems, Python  version etc. Do you make use of caching? Feel free**
+> **lintin1g, etc.)? Do you test multiple operating systems, Python  version etc. Do you make use of caching? Feel free**
 > **to insert a link to one of your GitHub actions workflow.**
 >
 > Recommended answer length: 200-300 words.
