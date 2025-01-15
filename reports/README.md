@@ -243,7 +243,9 @@ In total, we have implemented 3 tests. Primarily, we are testing the data loadin
 >
 > Answer:
 
---- question 9 fill here ---
+We made use of branching in our project to organize and manage our development workflow. Each team member worked on their own branch, separate from the main branch, to implement specific features or changes. This approach allowed us to work independently without disrupting the stability of the main branch.
+
+Using branches ensured that each feature could be developed and tested in isolation before being merged into the main branch. This method reduces the risk of introducing bugs and helps maintain a clean and stable codebase. While we did not utilize pull requests, they could further enhance our version control by providing a structured way to review and discuss code changes before merging. Pull requests facilitate collaboration, improve code quality, and ensure that every change aligns with the project's standards.
 
 ### Question 10
 
@@ -544,7 +546,7 @@ To mitigate this, we incorporated caching into our workflow. This optimization s
 > Example:
 >
 > *The starting point of the diagram is our local setup, where we integrated ... and ... and ... into our code.*
-> *Whenever we commit code and push to GitHub, it auto triggers ... and ... . From there the diagram shows ...*
+> *Whenever we code and push to GitHub, it auto triggers ... and ... . From there the diagram shows ...*
 >
 > Answer:
 
