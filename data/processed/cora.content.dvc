@@ -1,0 +1,5 @@
+outs:
+- md5: 7ffbff7cfb44225449cff17728829af1
+  size: 7823427
+  hash: md5
+  path: cora.content
