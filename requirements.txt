@@ -8,5 +8,6 @@ numpy
 scipy
 wandb
 matplotlib
-
+google
 pytest
+protobuf
