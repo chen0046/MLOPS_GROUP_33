@@ -13,3 +13,4 @@ pytest
 protobuf
 pyyaml
 requests
+urllib3
