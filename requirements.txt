@@ -14,3 +14,4 @@ protobuf
 pyyaml
 requests
 urllib3
+idna
