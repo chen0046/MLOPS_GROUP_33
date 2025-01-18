@@ -12,8 +12,8 @@ COPY src/ src/
 
 
 WORKDIR /
-RUN target=/root/.cache/pip pip install -r requirements.txt --no-deps
+RUN target=/root/.cache/pip pip install -r requirements.txt
 RUN pip install . --no-deps --no-cache-dir
 
 
-ENTRYPOINT ["python", "-u", "src/final_project/train.py"]
+ENTRYPOINT ["python", "-u", "/src/final_project/gcpTrain.py"]

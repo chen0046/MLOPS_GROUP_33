@@ -43,12 +43,12 @@ torch.manual_seed(args.seed)
 if args.cuda:
     torch.cuda.manual_seed(args.seed)
 
-current_dir = os.path.dirname(__file__)  
-project_root = os.path.abspath(os.path.join(current_dir, '..', '..', '..'))
-processed_data_dir = os.path.join(project_root, 'MLOPS_GROUP_33', 'data', 'processed//')
+##current_dir = os.path.dirname(__file__)  
+##project_root = os.path.abspath(os.path.join(current_dir, '..', '..', '..'))
+##processed_data_dir = os.path.join(project_root, 'MLOPS_GROUP_33', 'data', 'processed//')
 
 # Load data
-adj, features, labels, idx_train, idx_val, idx_test = load_data(path=processed_data_dir)
+adj, features, labels, idx_train, idx_val, idx_test = load_data(path="/gcs/mlops-33-busket/processed")
 
 # Model and optimizer
 if args.sparse:
