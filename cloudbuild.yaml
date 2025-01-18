@@ -5,15 +5,15 @@ steps:
     'build',
     '.',
     '-t',
-    'europe-west1-docker.pkg.dev/mlops-33/mlops-docker/project-image',
+    'europe-west1-docker.pkg.dev/dtumlops-448013/dtumlops/mlops_image', 
     '-f',
-    'train.dockerfile'
+    'Dockerfile'
   ]
 - name: 'gcr.io/cloud-builders/docker'
   id: 'Push container image'
   args: [
     'push',
-    'europe-west1-docker.pkg.dev/mlops-33/mlops-docker/project-image'
+    'europe-west1-docker.pkg.dev/dtumlops-448013/dtumlops/mlops_image'  
   ]
 options:
   logging: CLOUD_LOGGING_ONLY
