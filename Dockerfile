@@ -12,7 +12,7 @@ COPY src/ src/
 
 
 WORKDIR /
-RUN target=/root/.cache/pip pip install -r requirements.txt --no-deps
+RUN target=/root/.cache/pip pip install -r requirements_docker.txt --no-deps
 RUN pip install . --no-deps --no-cache-dir
 
 
