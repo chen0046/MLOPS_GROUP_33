@@ -213,7 +213,7 @@ s205420, s242640, s147082, s140035
 >
 > Answer:
 
---- question 7 fill here ---
+In total, we have implemented 3 tests. Primarily, we are testing the data loading and accuracy functions, as these are the most critical parts of our application for ensuring correct data preprocessing and performance evaluation. Additionally, we are testing the model implementation to verify its functionality and output, ensuring reliability in both data handling and model behavior.
 
 ### Question 8
 
@@ -243,7 +243,9 @@ s205420, s242640, s147082, s140035
 >
 > Answer:
 
---- question 9 fill here ---
+We made use of branching in our project to organize and manage our development workflow. Each team member worked on their own branch, separate from the main branch, to implement specific features or changes. This approach allowed us to work independently without disrupting the stability of the main branch.
+
+Using branches ensured that each feature could be developed and tested in isolation before being merged into the main branch. This method reduces the risk of introducing bugs and helps maintain a clean and stable codebase. While we did not utilize pull requests, they could further enhance our version control by providing a structured way to review and discuss code changes before merging. Pull requests facilitate collaboration, improve code quality, and ensure that every change aligns with the project's standards.
 
 ### Question 10
 
@@ -263,7 +265,7 @@ s205420, s242640, s147082, s140035
 ### Question 11
 
 > **Discuss you continuous integration setup. What kind of continuous integration are you running (unittesting,**
-> **linting, etc.)? Do you test multiple operating systems, Python  version etc. Do you make use of caching? Feel free**
+> **lintin1g, etc.)? Do you test multiple operating systems, Python  version etc. Do you make use of caching? Feel free**
 > **to insert a link to one of your GitHub actions workflow.**
 >
 > Recommended answer length: 200-300 words.
@@ -275,7 +277,10 @@ s205420, s242640, s147082, s140035
 >
 > Answer:
 
---- question 11 fill here ---
+We have organized our continuous integration into one file that focuses on unit testing. This file runs the tests we have implemented, such as verifying the data loading, accuracy function, and model behavior. To ensure broad compatibility, we have tested across multiple operating systems, including Linux, Windows, and macOS, as well as Python versions 3.10, 3.11, and 3.12. While adding these combinations enhanced our test coverage, it also doubled the runtime due to the increased matrix of tests.
+
+To mitigate this, we incorporated caching into our workflow. This optimization significantly reduced the runtime, improving it by approximately 30%. Caching particularly benefits repetitive tasks like dependency installation, making our continuous integration pipeline more efficient without compromising on thorough testing. An example of a triggered workflow can be seen below
+<https://github.com/chen0046/MLOPS_GROUP_33/actions/runs/12797433854>
 
 ## Running code and tracking experiments
 
@@ -541,7 +546,7 @@ s205420, s242640, s147082, s140035
 > Example:
 >
 > *The starting point of the diagram is our local setup, where we integrated ... and ... and ... into our code.*
-> *Whenever we commit code and push to GitHub, it auto triggers ... and ... . From there the diagram shows ...*
+> *Whenever we code and push to GitHub, it auto triggers ... and ... . From there the diagram shows ...*
 >
 > Answer:
 
