@@ -3,6 +3,7 @@ from final_project.data import load_data, accuracy
 import os
 import torch 
 
+
 #Test the data loading
 def test_data_loading():
     """Test the data loading and its properties."""
