@@ -12,3 +12,4 @@ google
 pytest
 protobuf
 pyyaml
+requests
