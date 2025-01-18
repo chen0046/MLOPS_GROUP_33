@@ -3,3 +3,7 @@ outs:
   size: 7823427
   hash: md5
   path: cora.content
+  cloud:
+    remote_storage:
+      etag: 08aff6d58c9dff8a031001
+      version_id: '1737201823349551'
