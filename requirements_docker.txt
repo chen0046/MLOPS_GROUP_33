@@ -57,7 +57,7 @@ entrypoints==0.4
 fastapi==0.115.6
 fastjsonschema==2.21.1
 filelock==3.16.1
--e git+https://github.com/chen0046/MLOPS_GROUP_33.git@3c334ad7bd21d3ea0b21fc2a55597f38f6a523d6#egg=final_project
+-e git+https://github.com/chen0046/MLOPS_GROUP_33.git@0eef91b20a901af8abfb03564b35a32310556064#egg=final_project
 flatten-dict==0.4.2
 flufl.lock==8.1.0
 fonttools==4.55.3
