@@ -48,7 +48,7 @@ if args.cuda:
 ##processed_data_dir = os.path.join(project_root, 'MLOPS_GROUP_33', 'data', 'processed//')
 
 # Load data
-adj, features, labels, idx_train, idx_val, idx_test = load_data(path="/gcs/mlops-33-busket/processed")
+adj, features, labels, idx_train, idx_val, idx_test = load_data(path="/gcs/chen0046-bucket/data/processed/")
 
 # Model and optimizer
 if args.sparse:

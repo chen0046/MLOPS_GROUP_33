@@ -4,4 +4,4 @@ workerPoolSpecs:
         machineType: n1-highmem-2
     replicaCount: 1
     containerSpec:
-        imageUri: europe-west1-docker.pkg.dev/mlops-33/mlops-docker/project-image:latest
+        imageUri: europe-west1-docker.pkg.dev/dtumlops-448013/dtumlops/project-image:latest
