@@ -524,7 +524,7 @@ We performed both unit testing and load testing on the API. For unit testing, we
 >
 > Answer:
 
-We utilize Google Cloud Monitoring to track the performance of our API and model. By configuring Cloud Monitoring, we can monitor critical API metrics in real-time, such as response time, request volume, error rates, and resource usage. We defined key performance indicators like requests per second and average response time, which are accessible through the dashboard. We also implemented regular health checks to ensure the API operates smoothly and enabled Cloud Logging to capture all API requests and error logs, allowing us to quickly identify and debug potential issues. Additionally, we monitor the computational resources used by the model, such as CPU and memory, to ensure the API remains stable during high traffic periods.
+We utilized Google Cloud Monitoring to track the performance of our API and model. By configuring Cloud Monitoring, we can monitor critical API metrics in real-time, such as response time, request volume, error rates, and resource usage. We defined key performance indicators like requests per second and average response time, which are accessible through the dashboard. We also implemented regular health checks to ensure the API operates smoothly and enabled Cloud Logging to capture all API requests and error logs, allowing us to quickly identify and debug potential issues. Additionally, we monitor the computational resources used by the model, such as CPU and memory, to ensure the API remains stable during high traffic periods.
 
 ## Overall discussion of project
 
