@@ -163,7 +163,12 @@ s205420, s242640, s147082, s140035
 >
 > Answer:
 
---- question 4 fill here ---
+We used Conda for managing our dependencies in the project. The list of dependencies was auto-generated using a requirements.txt file, which includes all the necessary packages and their specific versions. To get a complete copy of our development environment, a new team member would need to follow a few simple steps. First, they would need to install Conda if not already installed. Then, they can create a new environment using the conda create command, followed by the requirements.txt file to install all the required dependencies. The commands would be as follows:
+
+conda create --name <env_name> python=3.11
+conda activate <env_name>
+pip install -r requirements.txt
+This ensures that the new team member has an identical environment with all the necessary libraries and dependencies installed, making it easy to start working on the project without any setup issues.
 
 ### Question 5
 
@@ -228,7 +233,7 @@ In total, we have implemented 3 tests. Primarily, we are testing the data loadin
 >
 > Answer:
 
---- question 8 fill here ---
+The total code coverage of the code is 71.7%, which includes all our source code. We are far from 100% coverage of our code, and even if we were to achieve 100%, it wouldn't necessarily mean the code is error-free. Code coverage shows how much of the code is executed during testing, but it doesn’t guarantee that all possible scenarios are tested. Some edge cases or complex interactions between components might still be missed, even with full coverage. Therefore, while 100% coverage is desirable, it’s essential to ensure that the tests are comprehensive, covering different use cases and validating edge conditions, in addition to relying on manual checks or additional testing methods for greater confidence in the code's reliability.
 
 ### Question 9
 
@@ -260,7 +265,7 @@ Using branches ensured that each feature could be developed and tested in isolat
 >
 > Answer:
 
---- question 10 fill here ---
+We did make use of DVC (Data Version Control) in our project to manage data. DVC helped us by enabling version control for our datasets and model artifacts. It allowed us to track changes over time, ensuring we could revert to previous versions when necessary. This was particularly useful for managing large data files, as DVC avoids the need to store them directly in Git. Additionally, DVC facilitated collaboration by allowing team members to easily share and sync data versions, maintaining consistency across the project. Overall, DVC improved our workflow by providing a structured way to manage and version control data, ensuring better reproducibility and traceability in our pipeline.
 
 ### Question 11
 
@@ -378,7 +383,12 @@ To mitigate this, we incorporated caching into our workflow. This optimization s
 >
 > Answer:
 
---- question 17 fill here ---
+Bucket Used for storing and managing large datasets and model artifacts. It provides scalable object storage for easy access and sharing (data version control).
+Compute Engine Used to run virtual machines (VMs) for training models and performing resource-intensive tasks. It offers flexible compute power for various workloads.
+Cloud Build Used for automating the building, testing, and deployment of our code. It helps in continuous integration and continuous delivery (CI/CD) of our project.
+Triggers Used to automate workflows and trigger Cloud Build processes based on specific events, such as pushing code to the repository.
+Vertex AI Used for managing machine learning models, training, and deployment. It provides a fully managed environment for ML workflows and facilitates model monitoring and retraining.
+Artifact Registry Used for managing and storing Docker images and other artifacts. It helps us to version control and deploy containerized applications efficiently.
 
 ### Question 18
 
