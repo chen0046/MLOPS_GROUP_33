@@ -314,7 +314,7 @@ For the experimental configuration, we utilized the argparser package to define 
 > *one would have to do ...*
 >
 > Answer:
-13. We first set up a configuration file to record the specific values of the hyperparameters related to model training. This ensures consistency in parameters for future executions of the project, making it easier to reproduce results and identify which hyperparameters are most effective for our specific problem. Additionally, after the model training is completed, we store the best set of parameter files from the training in the project structure for subsequent validation and practical use. Furthermore, we save the parameter files of the training results on the WandB platform, enabling us to conveniently review and retrieve the results of different training runs.
+ We first set up a configuration file to record the specific values of the hyperparameters related to model training. This ensures consistency in parameters for future executions of the project, making it easier to reproduce results and identify which hyperparameters are most effective for our specific problem. Additionally, after the model training is completed, we store the best set of parameter files from the training in the project structure for subsequent validation and practical use. Furthermore, we save the parameter files of the training results on the WandB platform, enabling us to conveniently review and retrieve the results of different training runs.
 
 ### Question 14
 
@@ -339,7 +339,7 @@ At the same time, we tracked the change in validation accuracy as the training b
 
 ![Training loss](figures/accuracy.png)
 
-It was observed that the training accuracy quickly increased and then stabilized around 84% in validation accuracy.
+It was observed that the training accuracy quickly increased and then stabilized around 82% in validation accuracy.
 Additionally, we performed multiple rounds of training using hyperparameter scanning to determine the best hyperparameter combination, and the results are shown in the figure below:
 
 ![Training loss](figures/hyperParameter.png)
@@ -392,10 +392,15 @@ We use 'docker build -f Dockerfile -t model_train' to build the Docker image.You
 >
 > Answer:
 In this project, we used the following GCP services:
+
 (1) GCP Buckets: Used to store datasets, model checkpoints, and other important project files.
+
 (2) GCP Containers: Used to create isolated environments for training and inference with Docker containers.
+
 (3) Vertex AI: Managed and automated machine learning workflows, including model training and hyperparameter tuning.
+
 (4) Vertex AI: Provided scalable computational resources for model training.
+
 (5) Google Cloud Run: Deployed and monitered the trained model as a scalable API for inference requests.
 
 ### Question 18
