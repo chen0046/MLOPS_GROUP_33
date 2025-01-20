@@ -163,7 +163,7 @@ s205420, s242640, s147082, s140035
 >
 > Answer:
 
->The overall project uses the Anaconda environment to manage dependencies required for model training and operations. We utilized Conda to create a virtual environment, ensuring that the environment is relatively clean at initialization. By writing  a `requirements.txt` file in the project, we specified the types of dependencies used in the project and their appropriate versions. This allows the project to control dependencies based on the contents of the file. Additionally, the `requirements.txt` file also plays a role in managing dependencies within the container during the Docker container construction process.
+The overall project uses the Anaconda environment to manage dependencies required for model training and operations. We utilized Conda to create a virtual environment, ensuring that the environment is relatively clean at initialization. By writing  a `requirements.txt` file in the project, we specified the types of dependencies used in the project and their appropriate versions. This allows the project to control dependencies based on the contents of the file. Additionally, the `requirements.txt` file also plays a role in managing dependencies within the container during the Docker container construction process.
 
 ### Question 5
 
@@ -494,7 +494,7 @@ We used FastAPI to create an API for the model's prediction results. First, we b
 >
 > Answer:
 
-We successfully deployed the API in the cloud. First, we used FastAPI to wrap the model into an application and tested its functionality locally using Swagger to ensure that the API endpoints could correctly handle input data and return prediction results. Then, we containerized the API application, created a `Dockerfile` to build the image, and pushed the image to Google Cloud Artifact Registry via Docker for cloud access and deployment. Next, we used Google Cloud Run to deploy the image to the cloud, successfully providing a scalable API service. Google Cloud Run allows our API to automatically scale based on load, ensuring high availability. This approach not only ensures the stable operation of the model in the cloud but also allows us to easily manage and update the service.
+We deployed the API in the cloud. First, we used FastAPI to wrap the model into an application and tested its functionality locally using Swagger to ensure that the API endpoints could correctly handle input data and return prediction results. Then, we containerized the API application, created a `Dockerfile` to build the image, and pushed the image to Google Cloud Artifact Registry via Docker for cloud access and deployment. Next, we used Google Cloud Run to deploy the image to the cloud, successfully providing a scalable API service. Google Cloud Run allows our API to automatically scale based on load, ensuring high availability. This approach not only ensures the stable operation of the model in the cloud but also allows us to easily manage and update the service.
 
 ### Question 25
 
