@@ -3,7 +3,7 @@ import torch
 import io
 import scipy.sparse as sp
 import numpy as np
-from models import GAT
+from MLOPS_GROUP_33.models.models import GAT
 from fastapi import FastAPI, File, UploadFile
 from PIL import Image
 

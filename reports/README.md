@@ -332,9 +332,11 @@ For the experimental configuration, we utilized the argparser package to define 
 > Answer:
 On the WandB platform, we tracked the change in the training loss on the training set as the number of epochs increased, as shown in the figure below:
 ![Training loss](figures/loss.png)
+
 We observed that the training performed well, with the loss decreasing rapidly and then gradually stabilizing within a certain range.
 At the same time, we tracked the change in validation accuracy as the training batches increased, as shown in the figure below:
 ![Training loss](figures/accuracy.png)
+
 It was observed that the training accuracy quickly increased and then stabilized around 84% in validation accuracy.
 Additionally, we performed multiple rounds of training using hyperparameter scanning to determine the best hyperparameter combination, and the results are shown in the figure below:
 ![Training loss](figures/hyperParameter.png)

@@ -16,7 +16,7 @@ import torch.optim as optim
 from torch.autograd import Variable
 
 from data import load_data, accuracy
-from models import GAT, SpGAT
+from MLOPS_GROUP_33.models.models import GAT, SpGAT
 
 # Training settings
 parser = argparse.ArgumentParser()
