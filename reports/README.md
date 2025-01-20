@@ -162,6 +162,7 @@ s205420, s242640, s147082, s140035
 > *complete copy of our development environment, one would have to run the following commands*
 >
 > Answer:
+
 >The overall project uses the Anaconda environment to manage dependencies required for model training and operations. We utilized Conda to create a virtual environment, ensuring that the environment is relatively clean at initialization. By writing  a `requirements.txt` file in the project, we specified the types of dependencies used in the project and their appropriate versions. This allows the project to control dependencies based on the contents of the file. Additionally, the `requirements.txt` file also plays a role in managing dependencies within the container during the Docker container construction process.
 
 ### Question 5
@@ -177,6 +178,7 @@ s205420, s242640, s147082, s140035
 > *experiments.*
 >
 > Answer:
+
 This project utilizes an adjusted project template, provided as part of the course, which is based on Cookiecutter but better suited for machine learning operations. This template removes some files unrelated to the project, such as LICENSE and notebooks. Using this template, we structured the project's file system. The `data` directory contains the datasets required for this project. The primary source code is stored in the `src` folder, which is divided into two subfolders: `config` and `final_project`. The `config` folder contains configuration files for the project, such as the configuration files used for parameter sweeps during multi-round training to find the optimal parameters. The `final_project` folder primarily holds the code for models, training, and validation. Additionally, to support the construction of Docker containers, the `dockerfiles` directory includes configuration files for building the container. The code for testing the model is stored in the `tests` directory.
 
 ### Question 6
@@ -296,6 +298,7 @@ To mitigate this, we incorporated caching into our workflow. This optimization s
 > *We used a simple argparser, that worked in the following way: Python  my_script.py --lr 1e-3 --batch_size 25*
 >
 > Answer:
+
 For the experimental configuration, we utilized the argparser package to define the model parameters, training hyperparameters, and other related settings during the training process. Additionally, for the sweep process that scans various parameters to obtain the best model training results, we created a YAML file to specify the selection range of parameters such as dropout, lr, hidden, etc. This configuration file is passed to the wandb.init() function to facilitate parameter sweep training using WandB.
 
 ### Question 13
@@ -310,6 +313,7 @@ For the experimental configuration, we utilized the argparser package to define 
 > *one would have to do ...*
 >
 > Answer:
+
  We first set up a configuration file to record the specific values of the hyperparameters related to model training. This ensures consistency in parameters for future executions of the project, making it easier to reproduce results and identify which hyperparameters are most effective for our specific problem. Additionally, after the model training is completed, we store the best set of parameter files from the training in the project structure for subsequent validation and practical use. Furthermore, we save the parameter files of the training results on the WandB platform, enabling us to conveniently review and retrieve the results of different training runs.
 
 ### Question 14
@@ -326,6 +330,7 @@ For the experimental configuration, we utilized the argparser package to define 
 > *As seen in the second image we are also tracking ... and ...*
 >
 > Answer:
+
 On the WandB platform, we tracked the change in the training loss on the training set as the number of epochs increased, as shown in the figure below:
 
 ![Training loss](figures/loss.png)
@@ -352,6 +357,7 @@ Additionally, we performed multiple rounds of training using hyperparameter scan
 > *training docker image: `docker run trainer:latest lr=1e-3 batch_size=64`. Link to docker file: <weblink>*
 >
 > Answer:
+
 In our project, Docker was used to create a containerized environment for both the training and inference phases. During the training phase, Docker ensured a consistent and reproducible environment for the training dataset and scripts, regardless of the system. This helped in maintaining uniformity across different environments. In the inference phase, Docker was used to package the trained model and inference scripts into a container, making it easy to deploy the model across various environments.
 
 For deployment, the containerized environment was deployed to production systems such as cloud services or local servers to ensure that the model runs consistently. This also simplified the process of scaling and managing the deployed model.
@@ -412,6 +418,7 @@ In this project, we used the following GCP services:
 > *using a custom container: ...*
 >
 > Answer:
+
 In this project, we did not use Google Cloud's Compute Engine. We used Vertex AI to handle model training and deployment tasks. Vertex AI provides a streamlined and managed environment for machine learning workflows, simplifying our process by abstracting infrastructure management. This approach allowed us to focus on model development and experimentation without the need to manage underlying resources.
 
 ### Question 19
@@ -420,6 +427,7 @@ In this project, we did not use Google Cloud's Compute Engine. We used Vertex AI
 > **You can take inspiration from [this figure](figures/bucket.png).**
 >
 > Answer:
+
 ![Training loss](figures/bucket.png)
 
 ### Question 20
@@ -428,6 +436,7 @@ In this project, we did not use Google Cloud's Compute Engine. We used Vertex AI
 > **stored. You can take inspiration from [this figure](figures/registry.png).**
 >
 > Answer:
+
 ![Training loss](figures/artifact.png)
 
 ### Question 21
@@ -436,6 +445,7 @@ In this project, we did not use Google Cloud's Compute Engine. We used Vertex AI
 > **your project. You can take inspiration from [this figure](figures/build.png).**
 >
 > Answer:
+
 ![Training loss](figures/cloudBuild.png)
 
 ### Question 22
@@ -450,6 +460,7 @@ In this project, we did not use Google Cloud's Compute Engine. We used Vertex AI
 > *was because ...*
 >
 > Answer:
+
 We managed to train our model in the cloud using Vertex AI. First, we built the Docker image for this project in Google Cloud and uploaded it to Artifact Registry. Then, we created the cloudbuild.yaml configuration file, setting the image address and the cloud server region, among other configurations. Finally, we used a command in combination with the configuration file to create the Vertex AI training job. On the platform, we were able to view real-time training status and monitor progress. The reason we chose Vertex AI is that it offers convenient cloud-based model training and monitoring features, allowing us to fully leverage Google Cloud's computational resources, improving training efficiency and scalability.
 
 ## Deployment
@@ -466,6 +477,7 @@ We managed to train our model in the cloud using Vertex AI. First, we built the 
 > *to the API to make it more ...*
 >
 > Answer:
+
 We used FastAPI to create an API for the model's prediction results. First, we built a simple FastAPI application and loaded the best-performing model from previous training into memory. In this API, we set up a POST request endpoint that accepts two input prediction files and performs inference on the data, returning the prediction results. To improve performance, we implemented asynchronous processing, particularly when loading the model and certain parameters, ensuring that the API can respond quickly without being blocked by the loading process. Additionally, we performed data preprocessing and validation to ensure the correctness and consistency of the input data, preventing any invalid data from causing model errors.
 
 ### Question 24
@@ -481,6 +493,7 @@ We used FastAPI to create an API for the model's prediction results. First, we b
 > *`curl -X POST -F "file=@file.json"<weburl>`*
 >
 > Answer:
+
 We successfully deployed the API in the cloud. First, we used FastAPI to wrap the model into an application and tested its functionality locally using Swagger to ensure that the API endpoints could correctly handle input data and return prediction results. Then, we containerized the API application, created a `Dockerfile` to build the image, and pushed the image to Google Cloud Artifact Registry via Docker for cloud access and deployment. Next, we used Google Cloud Run to deploy the image to the cloud, successfully providing a scalable API service. Google Cloud Run allows our API to automatically scale based on load, ensuring high availability. This approach not only ensures the stable operation of the model in the cloud but also allows us to easily manage and update the service.
 
 ### Question 25
@@ -495,6 +508,7 @@ We successfully deployed the API in the cloud. First, we used FastAPI to wrap th
 > *before the service crashed.*
 >
 > Answer:
+
 We performed both unit testing and load testing on the API. For unit testing, we used the testing client provided by FastAPI to validate the functionality, ensuring that each endpoint correctly handles inputs and returns the expected outputs. For load testing, we used the Locust tool to simulate a large number of concurrent users accessing the API. The results of the tests showed that the average response time of our API was 11.2 seconds, and the 99th percentile response time was 18.3 seconds.
 
 ### Question 26
@@ -509,6 +523,7 @@ We performed both unit testing and load testing on the API. For unit testing, we
 > *measure ... and ... that would inform us about this ... behaviour of our application.*
 >
 > Answer:
+
 We utilize Google Cloud Monitoring to track the performance of our API and model. By configuring Cloud Monitoring, we can monitor critical API metrics in real-time, such as response time, request volume, error rates, and resource usage. We defined key performance indicators like requests per second and average response time, which are accessible through the dashboard. We also implemented regular health checks to ensure the API operates smoothly and enabled Cloud Logging to capture all API requests and error logs, allowing us to quickly identify and debug potential issues. Additionally, we monitor the computational resources used by the model, such as CPU and memory, to ensure the API remains stable during high traffic periods.
 
 ## Overall discussion of project
