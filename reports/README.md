@@ -177,11 +177,7 @@ s205420, s242640, s147082, s140035
 > *experiments.*
 >
 > Answer:
-This project utilizes an adjusted project template, provided as part of the course, which is based on Cookiecutter but better suited for machine learning operations. This template removes some files unrelated to the project, such as LICENSE and notebooks. Using this template, we structured the project's file system. 
-
-The `data` directory contains the datasets required for this project. The primary source code is stored in the `src` folder, which is divided into two subfolders: `config` and `final_project`. The `config` folder contains configuration files for the project, such as the configuration files used for parameter sweeps during multi-round training to find the optimal parameters. The `final_project` folder primarily holds the code for models, training, and validation. 
-
-Additionally, to support the construction of Docker containers, the `dockerfiles` directory includes configuration files for building the container. The code for testing the model is stored in the `tests` directory.
+This project utilizes an adjusted project template, provided as part of the course, which is based on Cookiecutter but better suited for machine learning operations. This template removes some files unrelated to the project, such as LICENSE and notebooks. Using this template, we structured the project's file system. The `data` directory contains the datasets required for this project. The primary source code is stored in the `src` folder, which is divided into two subfolders: `config` and `final_project`. The `config` folder contains configuration files for the project, such as the configuration files used for parameter sweeps during multi-round training to find the optimal parameters. The `final_project` folder primarily holds the code for models, training, and validation. Additionally, to support the construction of Docker containers, the `dockerfiles` directory includes configuration files for building the container. The code for testing the model is stored in the `tests` directory.
 
 ### Question 6
 
@@ -391,6 +387,7 @@ We use 'docker build -f Dockerfile -t model_train' to build the Docker image.You
 > *We used the following two services: Engine and Bucket. Engine is used for... and Bucket is used for...*
 >
 > Answer:
+
 In this project, we used the following GCP services:
 
 (1) GCP Buckets: Used to store datasets, model checkpoints, and other important project files.
