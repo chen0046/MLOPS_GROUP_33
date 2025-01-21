@@ -143,7 +143,10 @@ s205420, s242640, s147082, s140035
 >
 > Answer:
 
---- question 3 fill here ---
+We used the third-party library SciPy in our project, which provided essential tools for handling sparse matrices and performing matrix operations efficiently. SciPy's sparse matrix functionality was crucial for working with the adjacency matrix and features of the graph in the Cora dataset. It allowed us to build and normalize large and sparse graph structures while maintaining memory efficiency.
+
+The scipy.sparse module helped us create, manipulate, and normalize sparse matrices, which were later converted to dense matrices for processing with PyTorch. These operations included row-normalizing the adjacency matrix and feature matrix, as well as constructing a symmetric adjacency matrix for the graph.
+Using SciPy simplified complex mathematical computations, making it easier to focus on developing and fine-tuning our Graph Attention Network (GAT) model.
 
 ## Coding environment
 
@@ -199,7 +202,9 @@ This project utilizes an adjusted project template, provided as part of the cour
 >
 > Answer:
 
---- question 6 fill here ---
+We have implemented documentation in our code, describing the purpose, inputs, and outputs of each function and module. However, we did not use explicit typing.
+
+Typing would have been helpful in improving readability by making it clear what types of data are expected and returned by functions, reducing misunderstandings. In larger projects, where multiple developers are involved, typing ensures consistency and prevents errors when interacting with different parts of the code. It also helps with error prevention by enabling tools to catch mismatches early, and supports safer refactoring by ensuring changes don't break functionality. Overall, typing aids in collaboration and makes code more maintainable.
 
 ## Version control
 
@@ -382,7 +387,10 @@ We use 'docker build -f Dockerfile -t model_train' to build the Docker image.You
 >
 > Answer:
 
---- question 16 fill here ---
+
+Our debugging method mainly involved using the built-in debugger in VS Code. We set breakpoints, stepped through the code, and inspected variables to identify issues. This approach helped us locate problems, especially when working with complex data or model-related bugs. In addition, we used print statements for quick checks during development to track variable values and the flow of execution.
+
+We did not perform extensive profiling of our code, as performance was not a major concern for this project. However, we did monitor key operations to ensure they were running efficiently. Overall, the debugging process and the performance were adequate for the scope of our project.
 
 ## Working in the cloud
 
@@ -543,7 +551,8 @@ We utilized Google Cloud Monitoring to track the performance of our API and mode
 >
 > Answer:
 
---- question 27 fill here ---
+Group member 1 used $8.56 of the total $50 credits allocated for the project, while Group member 2 used $3.23. The most expensive services were Compute Engine and Container Registry. Compute Engine costs were driven by the use of virtual machines for training and testing the model, which required significant computational resources. Container Registry contributed to the costs due to storing and managing multiple Docker images for our builds and deployments.
+Overall, working in the cloud was a valuable experience. It allowed us to scale resources as needed and integrate various services seamlessly, but managing costs and configurations required careful planning and attention.
 
 ### Question 28
 
@@ -590,7 +599,12 @@ We utilized Google Cloud Monitoring to track the performance of our API and mode
 >
 > Answer:
 
---- question 30 fill here ---
+The biggest challenge in the project was using the cloud to train our model. This process involved integrating several Google Cloud Platform (GCP) services, including Compute Engine, Artifact Registry, and Vertex AI. Each service required precise configuration, and ensuring smooth communication between them was challenging. Additionally, managing permissions for these services was a significant hurdle, as even minor misconfigurations could prevent the pipeline from functioning correctly.
+
+The most critical and time-consuming aspect was creating a functional cloudbuild.yaml and Dockerfile. These files are essential for automating the build and deployment process, but they required meticulous attention to detail. Errors in these configurations, such as incorrect dependency management or misaligned build steps, often caused build failures or runtime errors. Debugging these issues demanded significant effort and often slowed our progress.
+
+To overcome these challenges, we broke down the problem into smaller tasks and systematically addressed each issue. We relied heavily on GCP documentation, tutorials, and community forums for guidance. Iterative testing and debugging played a key role in identifying and resolving errors in our configuration files.
+Through persistence and teamwork, we managed to configure the pipeline successfully. While time-consuming, this process deepened our understanding of cloud infrastructure and CI/CD workflows, ultimately becoming one of the most rewarding aspects of the project.
 
 ### Question 31
 
@@ -608,4 +622,12 @@ We utilized Google Cloud Monitoring to track the performance of our API and mode
 > *We have used ChatGPT to help debug our code. Additionally, we used GitHub Copilot to help write some of our code.*
 > Answer:
 
---- question 31 fill here ---
+Student s205420 was in charge of setting up the initial Cookiecutter project, configuring the folder structure, and creating the Docker containers necessary for training and deployment. He also worked extensively on debugging and finalizing the cloudbuild.yaml file.
+
+Student s242640 led the efforts in training the models using Vertex AI and deploying them in the cloud. He managed the integration of Compute Engine, Artifact Registry, and Container Registry into the pipeline and ensured the correct permissions were granted across services.
+
+Student s147082 supported the project by testing various parts of the codebase, including debugging issues in the model and ensuring that cloud integrations were functional during development.
+
+Student s140035 contributed by assisting with data preparation and verifying the dataset integrity. He also helped with validating the results of the trained model and documenting the final pipeline setup.
+
+All members contributed to the overall progress by providing feedback on code, discussing challenges, and ensuring the project stayed on track.

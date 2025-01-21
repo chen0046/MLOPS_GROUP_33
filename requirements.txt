@@ -7,11 +7,3 @@ click
 numpy
 scipy
 wandb
-matplotlib
-google
-pytest
-protobuf
-pyyaml
-requests
-urllib3
-idna
