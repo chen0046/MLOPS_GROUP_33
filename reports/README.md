@@ -169,8 +169,9 @@ Using SciPy simplified complex mathematical computations, making it easier to fo
 We used Conda for managing our dependencies in the project. The list of dependencies was auto-generated using a requirements.txt file, which includes all the necessary packages and their specific versions. To get a complete copy of our development environment, a new team member would need to follow a few simple steps. First, they would need to install Conda if not already installed. Then, they can create a new environment using the conda create command, followed by the requirements.txt file to install all the required dependencies. The commands would be as follows:
 
 conda create --name <env_name> python=3.11
-conda activate <env_name>
-pip install -r requirements.txt
+; conda activate <env_name>
+; pip install -r requirements.txt
+
 This ensures that the new team member has an identical environment with all the necessary libraries and dependencies installed, making it easy to start working on the project without any setup issues.
 
 ### Question 5
@@ -187,7 +188,7 @@ This ensures that the new team member has an identical environment with all the 
 >
 > Answer:
 
-This project utilizes an adjusted project template, provided as part of the course, which is based on Cookiecutter but better suited for machine learning operations. This template removes some files unrelated to the project, such as LICENSE and notebooks. Using this template, we structured the project's file system. The `data` directory contains the datasets required for this project. The primary source code is stored in the `src` folder, which is divided into two subfolders: `config` and `final_project`. The `config` folder contains configuration files for the project, such as the configuration files used for parameter sweeps during multi-round training to find the optimal parameters. The `final_project` folder primarily holds the code for models, training, and validation. Additionally, to support the construction of Docker containers, the `dockerfiles` directory includes configuration files for building the container. The code for testing the model is stored in the `tests` directory.
+This project utilizes an adjusted project template, provided as part of the course, which is based on Cookiecutter but better suited for machine learning operations. This template removes some files unrelated to the project, such as LICENSE and notebooks. Using this template, we structured the project's file system. The data directory contains the datasets required for this project. The primary source code is stored in the src folder, which is divided into two subfolders: config and final_project. The config folder contains configuration files for the project, such as the configuration files used for parameter sweeps during multi-round training to find the optimal parameters. The final_project folder primarily holds the code for models, training, and validation. Additionally, to support the construction of Docker containers, the dockerfiles directory includes configuration files for building the container. The code for testing the model is stored in the tests directory.
 
 ### Question 6
 
@@ -585,7 +586,9 @@ Overall, working in the cloud was a valuable experience. It allowed us to scale 
 >
 > Answer:
 
---- question 29 fill here ---
+![Training loss](figures/structure.png)
+
+The process begins with the local development environment, where we use GitHub for version control, DVC (Data Version Control) for managing datasets, and WandB for tracking experiments and monitoring model performance. Once model development is completed locally, the code and changes are pushed to the GitHub repository. Each code push triggers a GitHub Actions workflow, which automatically builds a Docker image and pushes it to Google Cloud Artifact Registry. Simultaneously, DVC syncs the dataset to Google Storage Bucket for use in the cloud. Google Cloud Vertex AI then utilizes the Docker image from Artifact Registry to initiate training tasks. Through WandB, we can monitor the training process in real time, record metrics, and save the best-performing model version for deployment. After training, the built Docker image is deployed to Google Cloud Run, providing a scalable API service based on FastAPI that supports real-time predictions and model interactions. Users can access the service by calling OpenAPI endpoints. This automated pipeline ensures efficient integration from development to deployment, maintaining data and model reproducibility, real-time performance monitoring, as well as high availability and scalability of the service.
 
 ### Question 30
 
@@ -631,3 +634,5 @@ Student s147082 supported the project by testing various parts of the codebase, 
 Student s140035 contributed by assisting with data preparation and verifying the dataset integrity. He also helped with validating the results of the trained model and documenting the final pipeline setup.
 
 All members contributed to the overall progress by providing feedback on code, discussing challenges, and ensuring the project stayed on track.
+
+In this project, AI was utilized to interpret the template code, configuration files, and other content provided for understanding and using various components. This helped us better comprehend and integrate these components into our project. Additionally, in certain scenarios, AI-guided frameworks were used to assist us in implementing the code structure.
