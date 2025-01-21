@@ -489,6 +489,8 @@ We managed to train our model in the cloud using Vertex AI. First, we built the 
 
 We used FastAPI to create an API for the model's prediction results. First, we built a simple FastAPI application and loaded the best-performing model from previous training into memory. In this API, we set up a POST request endpoint that accepts two input prediction files and performs inference on the data, returning the prediction results. To improve performance, we implemented asynchronous processing, particularly when loading the model and certain parameters, ensuring that the API can respond quickly without being blocked by the loading process. Additionally, we performed data preprocessing and validation to ensure the correctness and consistency of the input data, preventing any invalid data from causing model errors.
 
+![Training loss](figures/api.png)
+
 ### Question 24
 
 > **Did you manage to deploy your API, either in locally or cloud? If not, describe why. If yes, describe how and**

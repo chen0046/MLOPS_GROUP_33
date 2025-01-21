@@ -1,12 +1,9 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-<<<<<<< HEAD:models/models.py
-from MLOPS_GROUP_33.src.final_project.layers import GraphAttentionLayer, SpGraphAttentionLayer
-=======
-from .layers import GraphAttentionLayer, SpGraphAttentionLayer
 
->>>>>>> report:src/final_project/models.py
+from layers import GraphAttentionLayer, SpGraphAttentionLayer
+
 
 class GAT(nn.Module):
     def __init__(self, nfeat, nhid, nclass, dropout, alpha, nheads):
