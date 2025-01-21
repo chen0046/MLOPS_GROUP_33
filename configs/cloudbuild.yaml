@@ -7,7 +7,7 @@ steps:
     '-t',
     'europe-west1-docker.pkg.dev/dtumlops-448013/dtumlops/mlops_image', 
     '-f',
-    'Dockerfile'
+    'dockerfiles/Dockerfile'
   ]
 - name: 'gcr.io/cloud-builders/docker'
   id: 'Push container image'
