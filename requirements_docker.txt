@@ -57,7 +57,7 @@ entrypoints==0.4
 fastapi==0.115.6
 fastjsonschema==2.21.1
 filelock==3.16.1
--e git+https://github.com/chen0046/MLOPS_GROUP_33.git@0eef91b20a901af8abfb03564b35a32310556064#egg=final_project
+
 flatten-dict==0.4.2
 flufl.lock==8.1.0
 fonttools==4.55.3
@@ -185,8 +185,7 @@ sqltrie==0.11.1
 starlette==0.41.3
 sympy==1.13.1
 tabulate==0.9.0
-# Editable install with no version control (test_project==0.0.1)
--e /Users/chenxi/Desktop/02476/Day_2/test_repo
+
 text-unidecode==1.3
 threadpoolctl==3.5.0
 tinycss2==1.4.0
